@@ -1,0 +1,28 @@
+<div class="photo-container">
+  <h1><%= @collection.title %></h1>
+  <div class="gallery">
+    <ul>
+      <!-- TODO: sostituire all'id il counter del loop altrimenti non funziona con le altre gallerie -->
+      <% @collection.photos.each_with_index do |p, i| %>
+      <li><%= image_tag p.image_url, :class => 'responsive-image photo', :id => i %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="gallery-thumbnail">
+    <ul>
+      <% @collection.photos.each_with_index do |p, i| %>
+      <li><%= image_tag p.image_url, :class => 'responsive-image thumbs', :id => i %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="info">
+    <% @collection.photos.each_with_index do |p, i| %>
+    <div class="photo-info" id="<%= p.id %>">
+    <h1><%= p.title %></h1>
+    <p><%= p.description %></p>
+    </div>
+    <% end %>
+  </div>
+</div>

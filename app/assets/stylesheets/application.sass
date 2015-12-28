@@ -1,0 +1,55 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets"
+@import "bootstrap"
+@import "collections.sass"
+
+
+html, body
+  padding: 0
+  margin: 0
+  background: black
+  color: white
+  font-family: "Avenir Next"
+
+h1, h2, p, a
+  font-weight: 100
+
+h2
+  font-size: 3em
+
+a
+  color: white
+  font-weight: 300
+
+.navbar
+  margin: 0
+  border-radius: 0
+  border: none
+  padding: 0
+
+.logo
+  margin: 0 auto 0 auto
+  text-align: center
+  width: 500px
+
+  h2
+    font-size: 1em
+    padding: 0
+
+.responsive-image
+  width: 100%
+  height: auto

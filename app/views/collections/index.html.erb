@@ -1,0 +1,27 @@
+<div class="logo">
+  <%= image_tag 'source/logo.jpg', :class => 'logo'%>
+</div>
+
+<% @collections.each do |c| %>
+  <div class="collection">
+    <div class="title">
+      <h2><%= link_to c.title, collection_path(c) %></h2>
+      <p><%= c.description %></p>
+    </div>
+    <div class="thumbnails">
+      <% c.photos.each do |p| %>
+      <% if p.main_thumbnail == true %>
+      <div class="main-thumbnail">
+        <%= p.title %>
+        <%= image_tag p.image_url, :class => 'responsive-image' %>
+      </div>
+      <% end %>
+      <% if p.special_thumbnail == true %>
+      <div class="special-thumbnail">
+        <%= image_tag p.image_url, :class => 'responsive-image' %>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
