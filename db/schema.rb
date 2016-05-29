@@ -13,33 +13,36 @@
 
 ActiveRecord::Schema.define(version: 20151204205241) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "authors", force: :cascade do |t|
-    t.string   "first_name",  limit: 255
-    t.string   "last_name",   limit: 255
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "collections", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "photos", force: :cascade do |t|
-    t.string   "title",             limit: 255
-    t.text     "description",       limit: 65535
+    t.string   "title"
+    t.text     "description"
     t.date     "captured_on"
-    t.string   "place",             limit: 255
-    t.integer  "author_id",         limit: 4
-    t.integer  "collection_id",     limit: 4
+    t.string   "place"
+    t.integer  "author_id"
+    t.integer  "collection_id"
     t.boolean  "main_thumbnail"
     t.boolean  "special_thumbnail"
-    t.string   "image_url",         limit: 255
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.string   "image_url"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   add_index "photos", ["author_id"], name: "index_photos_on_author_id", using: :btree
